@@ -221,7 +221,7 @@ fn generate_postgres_impl(
             }
 
             impl FromSql<#diesel_mapping, Pg> for #enum_ty {
-                fn from_sql(bytes: Option<&<Pg as Backend>::RawValue>) -> deserialize::Result<Self> {
+                fn from_sql(bytes: Option<diesel::backend::RawValue<Pg>>) -> deserialize::Result<Self> {
                     match bytes {
                         #(Some(#variants_db) => Ok(#variants_rs),)*
                         Some(v) => Err(format!("Unrecognized enum variant: '{}'",

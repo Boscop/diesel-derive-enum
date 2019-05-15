@@ -25,3 +25,7 @@ mysql = []
 [lib]
 name = "diesel_derive_enum"
 proc-macro = true
+
+[patch.crates-io]
+diesel = { git = "https://github.com/Boscop/diesel", rev = "44281c6" }
+diesel_derives = { git = "https://github.com/Boscop/diesel", rev = "44281c6" }
